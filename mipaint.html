@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi paint</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        canvas{
+            background-color: #def;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="480" height="320"></canvas>
+
+    <script>
+        var mousepresionado = false;
+        $(function(){
+            //canvas[0] para obtener el objeto de doms osea el de html para poder acceder a sus propiedades (no es un objeto jquery)
+            var dibujo = $('canvas')[0]
+            var contexto = dibujo.getContext('2d')
+            
+            $('canvas').mousedown(function(){
+                mousepresionado=true;
+            })
+
+            $('canvas').mouseup(function(){
+                mousepresionado=false;
+            })
+
+            $('canvas').mousemove(function(e){
+                var xpos= e.pageX - dibujo.offsetLeft;
+                var ypos = e.pageY - dibujo.offsetTop;
+
+                if(mousepresionado){
+                    contexto.lineTo(xpos,ypos);
+                }
+                else{
+                    contexto.moveTo(xpos,ypos)
+                }
+                contexto.stroke();
+            })
+        })
+
+    </script>
+
+</body>
+</html>

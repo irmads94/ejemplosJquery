@@ -4,20 +4,52 @@
     <meta charset="UTF-8">
     <title>Hola mundo jQuery</title>
     <script src="jquery-3.1.1.min.js"></script>
-    <script src="holajquery.js"> </script>
+    <!-- <script src="holajquery.js"> </script> -->
+     <script>
+        $(function(){
+            $('#btnUno').click(function(){
+                alert('Hola ' + $(this).text());
+            })
+        })
+    </script>
+      <!--<script>
+        $(function(){
+            $('.boton').on('click',function() {
+                alert('Hola ' + $(this).text())
+        })
+        })
+    </script>-->
+
+    <script>
+        $(function(){
+            $('button').on('click', '.boton', {
+                propiedad1 : 'valor1',
+                propiedad2 : 'valor2'
+            }, function(e) {
+                alert(e.data.propiedad1);
+            })
+        })
+    </script>
 </head>
 <body>
     
 
-    <h1>Hola jQuery</h1>
-    <p class="parrafo">Parrafo 1</p>
+    <h1> Hola jQuery </h1>
+    <p class = "parrafo"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae labore rerum repellendus vero. Porro dolores quo pariatur, fuga deserunt incidunt sunt, accusamus cumque nesciunt repudiandae ipsum sequi earum a! </p>
+    <button id = "btnUno"> Boton 1 </button>
 
-    <h2>Encabezado 2</h2>
-    <p class="parrafo">Parrafo 2</p>
+    <h2> Encabezado 2  </h2>
+    <p class = "parrafo"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae labore rerum repellendus vero. Porro dolores quo pariatur, fuga deserunt incidunt sunt, accusamus cumque nesciunt repudiandae ipsum sequi earum a! </p>
+    <button class = "boton"> Boton 2 </button>
+
+    <h3> Encabezado 3 </h3>
+    <p id = "parrafo3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae labore rerum repellendus vero. Porro dolores quo pariatur, fuga deserunt incidunt sunt, accusamus cumque nesciunt repudiandae ipsum sequi earum a! </p>
+    <button class = "boton"> Boton 3 </button>
+
+    <h4> Encanezado 4 </h4>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae labore rerum repellendus vero. Porro dolores quo pariatur, fuga deserunt incidunt sunt, accusamus cumque nesciunt repudiandae ipsum sequi earum a! </p>
+    <button> Botton 4 </button>
     
-    <h3>Encabezado 3</h3>
-    <p id="parrafo3">Parrafo 3</p>
-
     
 <!--
     <script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo click</title>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    
+        <button class="boton">Boton 1</button>
+        <button class="boton">Boton 2</button>
+        <button class="boton">Boton 3</button>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore facere ducimus neque reprehenderit voluptatum modi tempora dolore ipsum? Totam architecto cumque quod in similique, corporis quaerat at. Natus, eum.
+        </p>  
+        
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore facere ducimus neque reprehenderit voluptatum modi tempora dolore ipsum? Totam architecto cumque quod in similique, corporis quaerat at. Natus, eum.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore facere ducimus neque reprehenderit voluptatum modi tempora dolore ipsum? Totam architecto cumque quod in similique, corporis quaerat at. Natus, eum.
+        </p>
+    <script> 
+    //FUNCION  CON DOS EVENTOS
+        $(function(){
+            
+           //UNA EVENTO ( CLICK)  ASOCIADO A UNA FUNCION... EN LA FUNCION LE DIGO QUE AL BOTON QUE LE DE CLICK 
+            $('.boton').click(function(){
+                $(this).hide();
+            })
+           //UNA EVENTO (DOBLE CLICK)  ASOCIADO A UNA FUNCION... EN LA FUNCION LE DIGO QUE AL BOTON QUE LE DE CLICK
+            $('.boton').dblclick(function(){
+                $(this).slideUp();
+            })
+
+            //CUANDO PASO EL MOUSE ENCIMA DEL PARRAFO CAMBIO EL COLOR A ROJO
+            $('p').mouseenter(function(){
+                $(this).css('color','red')
+            })
+
+            //CUANDO EL MOUSE SALGA DEL PARRAFO REGRESA AL COLOR QUE TENIA ANTERIORMENTE
+            $('p').mouseleave(function(){
+                $(this).css('color','black')
+            })
+            
+        })
+
+
+    </script>
+
+
+</body>
+</html>
