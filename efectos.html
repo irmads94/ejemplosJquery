@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efectos jQuery</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        .caja{
+            background-color: green;
+            width: 640px;
+            height: 480px;
+        }
+
+        .pelota{
+            background-color: orange;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .caja , .pelota{
+            border : black solid 1px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Ejemplos efectos en jQuery</h1>
+    <h2>Ocultar y mostrar</h2>
+    <button id="btn-ocultar">Ocultar</button>
+    <button id="btn-mostrar">Mostrar</button>
+    <button id="btn-alternar">Alternar</button>
+
+    <p id="parrafo1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, ullam veniam maiores! Ducimus nam quas eius fugiat soluta cupiditate quam itaque, dignissimos nemo qui saepe officiis, molestias delectus atque facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum at possimus blanditiis repellendus amet! Quod pariatur, at, asperiores tenetur unde iste illum hic. Doloremque accusamus quos, officiis, provident maiores non? </p>
+
+     <h2>Fundido gradual</h2>
+    <button id="btn-desaparecer">FadeOut</button>
+    <button id="btn-aparecer">FadeIn</button>
+    <button id="btn-alternar-fundido">FadeToggle</button>
+    <button id="btn-fundido-hasta">FadeTo</button>
+
+    <p id="parrafo2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, ullam veniam maiores! Ducimus nam quas eius fugiat soluta cupiditate quam itaque, dignissimos nemo qui saepe officiis, molestias delectus atque facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum at possimus blanditiis repellendus amet! Quod pariatur, at, asperiores tenetur unde iste illum hic. Doloremque accusamus quos, officiis, provident maiores non? </p>
+
+    <h2>Deslizamiento</h2>
+    <button id="btn-deslizar-arriba">slideUP</button>
+    <button id="btn-deslizar-abajo">slideDown</button>
+    <button id="btn-deslizar-alternar">slideToggle</button>
+
+    <p id="parrafo3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, ullam veniam maiores! Ducimus nam quas eius fugiat soluta cupiditate quam itaque, dignissimos nemo qui saepe officiis, molestias delectus atque facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum at possimus blanditiis repellendus amet! Quod pariatur, at, asperiores tenetur unde iste illum hic. Doloremque accusamus quos, officiis, provident maiores non? </p>
+
+
+    <h2>Animaciòn</h2>
+    <div class="caja">
+        <div class="pelota"></div>
+    </div>
+    <script>
+
+        $(document).ready(function (){
+            /* OCULTAR Y MOSTRAR */
+            $('#btn-ocultar').click(function (){
+                $('#parrafo1').hide('slow','linear');
+            })
+            $('#btn-mostrar').click(function (){
+                $('#parrafo1').show('fast');
+            })
+            $('#btn-alternar').click(function (){
+                $('#parrafo1').toggle(1000,'swing',function(){
+                    alert('LISTO');
+                });
+            })
+
+            /* FUNDIDO GRADUAL */
+            $('#btn-desaparecer').click(function (){
+                $('#parrafo2').fadeOut('slow');
+            })
+            $('#btn-aparecer').click(function (){
+                $('#parrafo2').fadeIn('slow');
+            })
+            $('#btn-alternar-fundido').click(function (){
+                $('#parrafo2').fadeToggle('slow');
+            })
+            $('#btn-fundido-hasta').click(function (){
+                $('#parrafo2').fadeTo('slow',0.5); /* velocidad, transparencia*/
+            })
+
+            /*DESLIZAMIENTO*/    
+            $('#btn-deslizar-arriba').click(function (){
+                $('#parrafo3').slideUp('slow');
+            })
+            $('#btn-deslizar-abajo').click(function (){
+                $('#parrafo3').slideDown('slow');
+            })
+            $('#btn-deslizar-alternar').click(function (){
+                $('#parrafo3').slideToggle('slow');
+            })
+             /*ANIMACION*/
+             $('.pelota').click(function(){
+                 $(this).animate({
+                     /*width:'100px',
+                     height: '100px'*/
+                     left: '600px', top: '400px'/*agrega 600 pixeles a la izquierda de la pelota*/
+                 },3000,'swing').animate({left:'0px',top:'0px'},3000,'linear')/*Despues de que termina una animacion'.'haz esta otra  animacion y asi sucesivamente*/
+             })
+
+        })
+    </script>
+</body>
+</html>
