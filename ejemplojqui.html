@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo jQueryUI</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+
+    <style>
+        #acordeon{
+            width: 400px;
+        }
+
+        .caja{
+            width: 400px;
+            height: 400px;
+            background-color: greenyellow;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de jQueryUI</h1>
+    <h2>Ejemplo de Acordeon</h2>
+
+    <div id = "acordeon">
+        <h3>Encabezado1</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quasi, autem reprehenderit. Perferendis tempore asperiores, ducimus velit tenetur! Corrupti maiores temporibus sunt enim minus perferendis eaque repudiandae deserunt ea nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi nesciunt minima voluptatibus eligendi architecto sequi nulla perferendis animi deserunt suscipit, consequatur eveniet ratione ex cum sint. Eveniet, quo, sit.</p>
+        </div>
+
+        
+        <h3>Encabezado2</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quasi, autem reprehenderit. Perferendis tempore asperiores, ducimus velit tenetur! Corrupti maiores temporibus sunt enim minus perferendis eaque repudiandae deserunt ea nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi nesciunt minima voluptatibus eligendi architecto sequi nulla perferendis animi deserunt suscipit, consequatur eveniet ratione ex cum sint. Eveniet, quo, sit.</p>
+        </div>
+
+        
+        <h3>Encabezado3</h3>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quasi, autem reprehenderit. Perferendis tempore asperiores, ducimus velit tenetur! Corrupti maiores temporibus sunt enim minus perferendis eaque repudiandae deserunt ea nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi nesciunt minima voluptatibus eligendi architecto sequi nulla perferendis animi deserunt suscipit, consequatur eveniet ratione ex cum sint. Eveniet, quo, sit.</p>
+        </div>
+    </div>
+
+    <h2>Ejemplo pestañas</h2>
+    <div id="pestañas">
+        <ul>
+            <li> <a href="#contenido1">Pestaña 1</a> </li>
+            <li> <a href="#contenido2">Pestaña 2</a> </li>
+            <li> <a href="#contenido3">Pestaña 3</a> </li>
+        </ul>
+
+        <div id="contenido1"> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div id="contenido2"> 
+            <p> Voluptatem quasi, autem reprehenderit. Perferendis tempore asperiores, ducimus velit tenetur! Corrupti maiores temporibus sunt enim minus perferendis eaque repudiandae deserunt ea nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. .</p>
+        </div>
+        <div id="contenido3"> 
+            <p>Perferendis tempore asperiores, ducimus velit tenetur! Corrupti maiores temporibus sunt enim minus perferendis eaque repudiandae deserunt ea nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit..</p>
+        </div>
+    </div>
+
+    <h3>Ejmeplo Arrastrable</h3>
+    <div class="caja" id = "limite">
+        <span id="arrastrable">Arrastrame</span>
+    </div>
+
+    <script>
+        $(function(){
+            $('#acordeon').accordion({
+                collapsible: true
+            })
+            $('#pestañas').tabs()
+            $('#arrastrable').draggable({
+                containment: '#limite'
+            })
+        })
+    </script>
+</body>
+</html>
